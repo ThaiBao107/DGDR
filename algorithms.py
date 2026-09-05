@@ -124,8 +124,11 @@ class ERM(Algorithm):
         self.classifier.load_state_dict(torch.load(classifier_path))
 
     def predict(self, x):
-        return self.classifier(self.network(x))
-    
+        with torch.autocast(device_type='cuda', dtype=torch.bfloat16):
+            output = self.classifier(self.network(x))
+        return output.float()
+        # return self.classifier(self.network(x))
+
 # Our method
 class GDRNet(ERM):
     def __init__(self, num_classes, cfg):
@@ -134,29 +137,36 @@ class GDRNet(ERM):
         self.criterion = DahLoss(beta= cfg.GDRNET.BETA, max_iteration = cfg.EPOCHS, \
                                 training_domains = cfg.DATASET.SOURCE_DOMAINS, temperature = cfg.GDRNET.TEMPERATURE, \
                                 scaling_factor = cfg.GDRNET.SCALING_FACTOR)
-                                    
+
     def img_process(self, img_tensor, mask_tensor, fundusAug):
-        
+
         img_tensor_new, mask_tensor_new = fundusAug['post_aug1'](img_tensor.clone(), mask_tensor.clone())
         img_tensor_new = img_tensor_new * mask_tensor_new
         img_tensor_new = fundusAug['post_aug2'](img_tensor_new)
         img_tensor_ori = fundusAug['post_aug2'](img_tensor)
 
         return img_tensor_new, img_tensor_ori
-    
-    def update(self, minibatch):
-        
-        image, mask, label, domain = minibatch
-        
-        self.optimizer.zero_grad()
-        
-        image_new, image_ori = self.img_process(image, mask, self.fundusAug)
-        features_ori = self.network(image_ori)
-        features_new = self.network(image_new)
-        output_new = self.classifier(features_new)
 
-        loss, loss_dict_iter = self.criterion([output_new], [features_ori, features_new], label, domain)
+    def update(self, minibatch):
+
+        image, mask, label, domain = minibatch
+
+        self.optimizer.zero_grad()
+
+        image_new, image_ori = self.img_process(image, mask, self.fundusAug)
+        #TODO: For flash attention
+        with torch.autocast(device_type='cuda', dtype=torch.bfloat16):
+            features_ori = self.network(image_ori)
+            features_new = self.network(image_new)
+            output_new = self.classifier(features_new)
+
+            loss, loss_dict_iter = self.criterion([output_new], [features_ori, features_new], label, domain)
+
         
+        # features_ori = self.network(image_ori)
+        # features_new = self.network(image_new)
+        # output_new = self.classifier(features_new)
+        # loss, loss_dict_iter = self.criterion([output_new], [features_ori, features_new], label, domain)
         loss.backward()
         self.optimizer.step()
 
