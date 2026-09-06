@@ -2,7 +2,7 @@
 
 ## Table of Contents
 
-- [OC-Mamba: Restoring Global Context in Domain Generalization via Overlapping Cross-Attention and Vision Mamba)
+- [OC-Mamba: Restoring Global Context in Domain Generalization via Overlapping Cross-Attention and Vision Mamba ]
   - [Table of Contents](#table-of-contents)
   - [Introduction](#introduction)
   - [Getting Started](#getting-started)
