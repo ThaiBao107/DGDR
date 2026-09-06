@@ -36,18 +36,6 @@ Besides, we provide open-source codes for pre-processing these datasets and seve
       - [Eyepacs](#eyepacs-1)
 - [Citation](#citation)
 
-## Current Results
-
-<p align="center">
-  <img src="./figures/results.png">
-  Comparison with state-of-the-art approaches under the DG test.
-</p>
-
-<p align="center">
-  <img src="./figures/esdg_results.png">
-  Comparison with state-of-the-art approaches under the ESDG test.
-</p>
-
 ## Get Access
 
 Eight fundus datasets are all open-source. You can find and download them on websites. The labels should follow the same standard. Due to the license issue, you can download the processed datasets we provided here (GDRBench [images](https://hkustconnect-my.sharepoint.com/:u:/g/personal/hche_connect_ust_hk/ETmoy8HPK5RCl0X075HYiF0ByLAkUcBGnoM75BcP8CefjA?e=KcqN0h) and [masks](https://hkustconnect-my.sharepoint.com/:f:/g/personal/ychengbj_connect_ust_hk/EsRUyE6bkrlKhSZdND4OygABKV6mHZzjfMj-cJA1zUVXPg?e=VbtD6q)), except FAGDR and MESSIDOR-2. The labels of these datasets are all in the range of 0 to 4. The meaning of each label is as follows:
@@ -307,15 +295,4 @@ The balck background of this image is not absolutely black. The intensity of the
 We provided processed Eyepacs dataset.
 
 
-# Citation
-```
-@inproceedings{che2023DGDR,
-  title={Towards generalizable diabetic retinopathy grading in unseen domains},
-  author={Che, Haoxuan and Cheng, Yuhan and Jin, Haibo and Chen, Hao},
-  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
-  pages={430--440},
-  year={2023},
-  organization={Springer}
-}
-```
 

@@ -12,21 +12,33 @@
     - [Evaluation](#evaluation)
   - [Citation](#citation)
 
-## News
-**2023.05** Our conference paper "Towards Generalizable Diabetic Retinopathy Grading in Unseen Domains" was early accepted by MICCAI2023 with ratio of 14%.
-
 
 ## Introduction
 Diabetic Retinopathy (DR) is a common complication of diabetes and a leading cause of blindness worldwide. Early and accurate grading of its severity is crucial for disease management. 
 Although deep learning has shown great potential for automated DR grading, its real-world deployment is still challenging due to distribution shifts among source and target domains. 
 <!-- The preliminary evidence presented in the paper suggests the existence of three-fold generalization issues: visual and degradation style shifts, diagnostic pattern diversity, and data imbalance.  -->
 To tackle these issues, we propose a novel unified framework named Generalizable Diabetic Retinopathy Grading Network (GDRNet). 
-<!-- GDRNet consists of three vital components: fundus visual-artifact augmentation (FundusAug), dynamic hybrid-supervised loss (DahLoss), and domain-class-aware re-balancing (DCR). FundusAug generates realistic augmented images via visual transformation and image degradation, while DahLoss jointly leverages pixel-level consistency and image-level semantics to capture the diverse diagnostic patterns and build generalizable feature representations. Moreover, DCR mitigates the data imbalance from a domain-class view and avoids undesired over-emphasis on rare domain-class pairs.  -->
-Besides the GDRNet, we provide a publicly available benchmark, GDRBench, for fair evaluations. GDRBench contains eight datasets and unified pre-processing. You can follow [here](./GDRBench/README.md) to get this benchmark.
-
 <p align="center">
   <img src="./figures/framework.png">
 </p>
+This project implemented base on DGDR. With this project, we will proposal a hybrid architecture, the model name is OC-Mamba, which is base on VMamba and OCAB (Overlapping Cross Attention Block) and evaluate the model result. Another, we still use a lot of modern model to compare with our proposal model. We evaluate the proposal model by replace each model into backbone of DGDR model. Here is the overview architecture of this model.
+
+<p align="center">
+  <img src="./figures/ocab_vmamba_kt.png">
+</p>
+
+<p align="center">
+  <img src="./figures/ocab_overlap.png">
+</p>
+
+In the process padding, we used a lot of zero numbers to padding right and bottom of images.
+<p align="center">
+  <img src="./figures/Process_Padding.png">
+</p>
+
+
+
+
 
 ## Getting Started
 These instructions will help you set up the project. 
@@ -123,14 +135,37 @@ We provide other controllable `args` in `./utils/args.py` to control the trainin
 
 We evaluate the results during training. You can find and analyze the tensorboard results in `./YOUR_OUTPUT_DIR/`.
 
-## Citation
-```
-@inproceedings{che2023DGDR,
-  title={Towards generalizable diabetic retinopathy grading in unseen domains},
-  author={Che, Haoxuan and Cheng, Yuhan and Jin, Haibo and Chen, Hao},
-  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
-  pages={430--440},
-  year={2023},
-  organization={Springer}
-}
-```
+### Visualization
+
+We provide a comparison table based on the experimental results of different models.
+<p align="center">
+  <img src="./figures/Visualization/final_result.png">
+</p>
+
+We provide a heap map to presentation the model's coverage.
+<p align="center">
+  <img src="./figures/Visualization/heap_map.png">
+</p>
+
+Finally, we provide some images about receptive field.
+<table align="center">
+  <tr>
+    <td align="center" width="25%">
+      <img src="./figures/Visualization/erf_final_visualization_ResNet50.png" width="250"/><br>
+      <b>ResNet-50</b>
+    </td>
+    <td align="center" width="25%">
+      <img src="./figures/Visualization/erf_final_visualization_swinv2.png" width="250"/><br>
+      <b>Swin Transformer V2</b>
+    </td>
+    <td align="center" width="25%">
+      <img src="./figures/Visualization/erf_final_visualization_VMamba.png" width="250"/><br>
+      <b>VMamba</b>
+    </td>
+    <td align="center" width="25%">
+      <img src="./figures/Visualization/erf_final_visualization_OCAB_VMamba.png" width="250"/><br>
+      <b>OC-Mamba</b>
+    </td>
+  </tr>
+</table>
+
