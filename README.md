@@ -148,22 +148,24 @@ We provide a heap map to presentation the model's coverage.
 </p>
 
 Finally, we provide some images about receptive field.
-<div align="center">
-  <div>
-    <img src="./figures/Visualization/erf_final_visualization_ResNet50.png" width="250"/>
-    <img src="./figures/Visualization/erf_final_visualization_swinv2.png" width="250"/>
-    <img src="./figures/Visualization/erf_final_visualization_VMamba.png" width="250"/>
-    <img src="./figures/Visualization/erf_final_visualization_OCAB_VMamba.png" width="250"/>
-  </div>
-
-  <div>
-    <b>ResNet-50</b>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <b>SwinTransformer V2</b>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <b>VMamba</b>
-     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <b>OC-Mamba</b>
-  </div>
-</div>
+<table align="center">
+  <tr>
+    <td align="center" width="25%">
+      <img src="./figures/Visualization/erf_final_visualization_ResNet50.png" width="250"/><br>
+      <b>ResNet-50</b>
+    </td>
+    <td align="center" width="25%">
+      <img src="./figures/Visualization/erf_final_visualization_swinv2.png" width="250"/><br>
+      <b>Swin Transformer V2</b>
+    </td>
+    <td align="center" width="25%">
+      <img src="./figures/Visualization/erf_final_visualization_VMamba.png" width="250"/><br>
+      <b>VMamba</b>
+    </td>
+    <td align="center" width="25%">
+      <img src="./figures/Visualization/erf_final_visualization_OCAB_VMamba.png" width="250"/><br>
+      <b>OC-Mamba</b>
+    </td>
+  </tr>
+</table>
 
