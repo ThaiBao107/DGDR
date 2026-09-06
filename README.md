@@ -21,7 +21,6 @@ To tackle these issues, we propose a novel unified framework named Generalizable
 <p align="center">
   <img src="./figures/framework.png">
 </p>
-Besides the GDRNet, we provide a publicly available benchmark, GDRBench, for fair evaluations. GDRBench contains eight datasets and unified pre-processing. You can follow [here](./GDRBench/README.md) to get this benchmark.
 This project implemented base on DGDR. With this project, we will proposal a hybrid architecture, the model name is OC-Mamba, which is base on VMamba and OCAB (Overlapping Cross Attention Block) and evaluate the model result. Another, we still use a lot of modern model to compare with our proposal model. We evaluate the proposal model by replace each model into backbone of DGDR model. Here is the overview architecture of this model.
 
 <p align="center">
