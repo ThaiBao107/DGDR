@@ -142,8 +142,28 @@ We provide a comparison table based on the experimental results of different mod
   <img src="./figures/Visualization/final_result.png">
 </p>
 
-We still provide a heap map to presentation the model's coverage.
+We provide a heap map to presentation the model's coverage.
 <p align="center">
   <img src="./figures/Visualization/heap_map.png">
 </p>
+
+Finally, we provide some images about receptive field.
+<div align="center">
+  <div>
+    <img src="./figures/Visualization/erf_final_visualization_ResNet50.png" width="250"/>
+    <img src="./figures/Visualization/erf_final_visualization_swinv2.png" width="250"/>
+    <img src="./figures/Visualization/erf_final_visualization_VMamba.png" width="250"/>
+    <img src="./figures/Visualization/erf_final_visualization_OCAB_VMamba.png" width="250"/>
+  </div>
+
+  <div>
+    <b>ResNet-50</b>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <b>SwinTransformer V2</b>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <b>VMamba</b>
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <b>OC-Mamba</b>
+  </div>
+</div>
 
