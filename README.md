@@ -12,9 +12,6 @@
     - [Evaluation](#evaluation)
   - [Citation](#citation)
 
-## News
-**2023.05** Our conference paper "Towards Generalizable Diabetic Retinopathy Grading in Unseen Domains" was early accepted by MICCAI2023 with ratio of 14%.
-
 
 ## Introduction
 Diabetic Retinopathy (DR) is a common complication of diabetes and a leading cause of blindness worldwide. Early and accurate grading of its severity is crucial for disease management. 
@@ -123,14 +120,3 @@ We provide other controllable `args` in `./utils/args.py` to control the trainin
 
 We evaluate the results during training. You can find and analyze the tensorboard results in `./YOUR_OUTPUT_DIR/`.
 
-## Citation
-```
-@inproceedings{che2023DGDR,
-  title={Towards generalizable diabetic retinopathy grading in unseen domains},
-  author={Che, Haoxuan and Cheng, Yuhan and Jin, Haibo and Chen, Hao},
-  booktitle={International Conference on Medical Image Computing and Computer-Assisted Intervention},
-  pages={430--440},
-  year={2023},
-  organization={Springer}
-}
-```
