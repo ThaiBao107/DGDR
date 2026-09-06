@@ -1,27 +1,25 @@
-# GDRNet: Towards Generalizable Diabetic Retinopathy Grading in Unseen Domains
+# OC-Mamba: Restoring Global Context in Domain Generalization via Overlapping Cross-Attention and Vision Mamba
 
 ## Table of Contents
 
-- [GDRNet: Towards Generalizable Diabetic Retinopathy Grading in Unseen Domains](#GDRNet-towards-generalizable-diabetic-retinopathy-grading-in-unseen-domains)
+- [OC-Mamba: Restoring Global Context in Domain Generalization via Overlapping Cross-Attention and Vision Mamba)
   - [Table of Contents](#table-of-contents)
-  - [News](#news)
   - [Introduction](#introduction)
   - [Getting Started](#getting-started)
     - [Data Preparation](#data-preparation)
     - [Train](#train)
     - [Evaluation](#evaluation)
-  - [Citation](#citation)
+    - [Visualization](#visualization)
+
 
 
 ## Introduction
 Diabetic Retinopathy (DR) is a common complication of diabetes and a leading cause of blindness worldwide. Early and accurate grading of its severity is crucial for disease management. 
 Although deep learning has shown great potential for automated DR grading, its real-world deployment is still challenging due to distribution shifts among source and target domains. 
-<!-- The preliminary evidence presented in the paper suggests the existence of three-fold generalization issues: visual and degradation style shifts, diagnostic pattern diversity, and data imbalance.  -->
-To tackle these issues, we propose a novel unified framework named Generalizable Diabetic Retinopathy Grading Network (GDRNet). 
 <p align="center">
   <img src="./figures/framework.png">
 </p>
-This project implemented base on DGDR. With this project, we will proposal a hybrid architecture, the model name is OC-Mamba, which is base on VMamba and OCAB (Overlapping Cross Attention Block) and evaluate the model result. Another, we still use a lot of modern model to compare with our proposal model. We evaluate the proposal model by replace each model into backbone of DGDR model. Here is the overview architecture of this model.
+This project implemented base on DGDR of Chehx. With this project, we will proposal a hybrid architecture, the model name is OC-Mamba, which is base on VMamba and OCAB (Overlapping Cross Attention Block) and evaluate the model result. Another, we still use a lot of modern model to compare with our proposal model. We evaluate the proposal model by replace each model into backbone of DGDR model. Here is the overview architecture of this model.
 
 <p align="center">
   <img src="./figures/ocab_vmamba_kt.png">
