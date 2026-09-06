@@ -18,9 +18,10 @@ Diabetic Retinopathy (DR) is a common complication of diabetes and a leading cau
 Although deep learning has shown great potential for automated DR grading, its real-world deployment is still challenging due to distribution shifts among source and target domains. 
 <!-- The preliminary evidence presented in the paper suggests the existence of three-fold generalization issues: visual and degradation style shifts, diagnostic pattern diversity, and data imbalance.  -->
 To tackle these issues, we propose a novel unified framework named Generalizable Diabetic Retinopathy Grading Network (GDRNet). 
+<!-- This project implemented base on DGDR. With this project, we will proposal a hybrid architecture, the model name is OC-Mamba, which is base on VMamba and OCAB (Overlapping Cross Attention Block) and evaluate the model result. Another, we still use a lot of modern model to compare with our proposal model.
 <!-- GDRNet consists of three vital components: fundus visual-artifact augmentation (FundusAug), dynamic hybrid-supervised loss (DahLoss), and domain-class-aware re-balancing (DCR). FundusAug generates realistic augmented images via visual transformation and image degradation, while DahLoss jointly leverages pixel-level consistency and image-level semantics to capture the diverse diagnostic patterns and build generalizable feature representations. Moreover, DCR mitigates the data imbalance from a domain-class view and avoids undesired over-emphasis on rare domain-class pairs.  -->
 Besides the GDRNet, we provide a publicly available benchmark, GDRBench, for fair evaluations. GDRBench contains eight datasets and unified pre-processing. You can follow [here](./GDRBench/README.md) to get this benchmark.
-<!-- This project implemented base on DGDR. With this project, we will proposal a hybrid architecture, the model name is OC-Mamba, which is base on VMamba and OCAB (Overlapping Cross Attention Block) and evaluate the model result. Another, we still use a lot of modern model to compare with our proposal model.
+
 
 <p align="center">
   <img src="./figures/framework.png">
