@@ -30,6 +30,7 @@ This project implemented base on DGDR. With this project, we will proposal a hyb
 <p align="center">
   <img src="./figures/ocab_overlap.png">
 </p>
+
 In the process padding, we used a lot of zero numbers to padding right and bottom of images.
 <p align="center">
   <img src="./figures/Process_Padding.png">
@@ -133,4 +134,16 @@ We provide other controllable `args` in `./utils/args.py` to control the trainin
 ### Evaluation
 
 We evaluate the results during training. You can find and analyze the tensorboard results in `./YOUR_OUTPUT_DIR/`.
+
+### Visualization
+
+We provide a comparison table based on the experimental results of different models.
+<p align="center">
+  <img src="./figures/Visualization/final_result.png">
+</p>
+
+We still provide a heap map to presentation the model's coverage.
+<p align="center">
+  <img src="./figures/Visualization/heap_map.png">
+</p>
 
